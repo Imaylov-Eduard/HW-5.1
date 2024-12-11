@@ -7,14 +7,13 @@ public class Main {
         int readyToSave = 15_000;
         int savingsAmount = 2_459_000;
         int month = 0;
-        double percentage = 1D / 100;
 
         while (downPayment < savingsAmount) {
             downPayment += readyToSave;
-            downPayment = (int) (downPayment * (1 + percentage));
             month++;
             System.out.println("Месяц " + month + " сумма накоплений равна" + downPayment + " рублей.");
         }
+
 
         System.out.println("Задача№2");
 
@@ -23,11 +22,13 @@ public class Main {
             i++;
             System.out.print(i + " ");
         }
+
         System.out.println(" ");
 
         for (; i >= 1; i--) {
             System.out.print(i + " ");
         }
+
 
         System.out.println("Задача№3");
 
@@ -43,7 +44,7 @@ public class Main {
 
         System.out.println("Задача4");
 
-        percentage = 7D / 100;
+        double percentage = 7D / 100;
         savingsAmount = 12_000_000;
         downPayment = readyToSave;
         month = 0;
@@ -71,7 +72,7 @@ public class Main {
         month = 0;
         int months = 12 * 9;
         while (month < months) {
-            downPayment = (int) (downPayment * (1 + percentage));
+            downPayment = (int) (downPayment * (7 + percentage));
             month++;
             if (month % 6 == 0) {
                 System.out.println("Месяц " + month + " сумма накоплений равна" + downPayment + " рублей.");
@@ -94,5 +95,8 @@ public class Main {
                 System.out.println(year);
             }
         }
-        }
     }
+}
+
+
+
