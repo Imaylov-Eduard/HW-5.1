@@ -6,12 +6,14 @@ public class Main {
         int downPayment = 0;
         int readyToSave = 15_000;
         int savingsAmount = 2_459_000;
+        double annualPercentage = 7;
+        double monthlyPercentage = annualPercentage / 100 / 12;
         int month = 0;
 
         while (downPayment < savingsAmount) {
             downPayment += readyToSave;
             month++;
-            System.out.println("Месяц " + month + " сумма накоплений равна" + downPayment + " рублей.");
+            System.out.println("Месяц " + month + " сумма накоплений равна " + downPayment + " рублей.");
         }
 
 
@@ -68,17 +70,20 @@ public class Main {
 
         System.out.println("Задача№6");
 
-        downPayment = readyToSave;
-        month = 0;
-        int months = 12 * 9;
-        while (month < months) {
-            downPayment = (int) (downPayment * (7 + percentage));
-            month++;
-            if (month % 6 == 0) {
-                System.out.println("Месяц " + month + " сумма накоплений равна" + downPayment + " рублей.");
-            }
+        double initialAmount = 15000;
+        double monthlyInterestRate = 0.07;
+        int totalMonths = 9 * 12;
+
+        System.out.println("Сумма накоплений каждые полгода:");
+
+
+        for (int q = 0; q <= totalMonths; q += 6) {
+            double amount = initialAmount * Math.pow(1 + monthlyInterestRate, q);
+            System.out.printf("Через %d месяцев: %.2f рублей%n", q, amount);
         }
+
         System.out.println("Задача№7");
+
         int dayFriday = 3;
         for (int day = dayFriday; day <= 31; day += 7) {
             System.out.println("Сегодня пятница, " + day + "-е число. Необходимо подготовить отчет");
